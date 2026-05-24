@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KaruApp - Découvrez la culture guadeloupéenne</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode">
+
+    <!-- Page Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay active">
+        <div class="loading-content">
+            <div class="loading-logo-container">
+                <span class="pulse-ring pulse-ring-1"></span>
+                <span class="pulse-ring pulse-ring-2"></span>
+                <div class="loading-logo-box">
+                    <img src="Logo_karu.png" alt="KaruApp Logo" class="loading-logo">
+                </div>
+            </div>
+            <div class="loading-dots">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo-section">
+                <img src="Logo_karu.png" alt="KaruApp Logo" class="logo-img">
+                <span class="logo-text">KaruApp</span>
+            </div>
+
+            <div class="nav-desktop">
+                <button class="nav-link" data-scroll="#features" data-translate="features">Fonctionnalités</button>
+                <button class="nav-link" data-scroll="#about" data-translate="about">À propos</button>
+                <button class="btn-primary" data-scroll="#download" data-translate="download">Télécharger</button>
+                <button class="btn-lang" id="lang-toggle">
+                    <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                    <span class="lang-label" id="lang-label">FR</span>
+                </button>
+                <button class="btn-theme" id="theme-toggle">
+                    <svg class="icon theme-icon" id="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="nav-mobile">
+                <button class="btn-lang" id="lang-toggle-mobile">
+                    <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                    <span class="lang-label-mobile" id="lang-label-mobile">FR</span>
+                </button>
+                <button class="btn-theme" id="theme-toggle-mobile">
+                    <svg class="icon" id="theme-icon-mobile" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <button class="menu-toggle" id="menu-toggle">
+                    <svg class="icon" id="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                    <svg class="icon hidden" id="close-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <div class="mobile-menu-content">
+                <button class="mobile-nav-link" data-scroll="#features" data-translate="features">Fonctionnalités</button>
+                <button class="mobile-nav-link" data-scroll="#about" data-translate="about">À propos</button>
+                <button class="mobile-btn-primary" data-scroll="#download" data-translate="download">Télécharger</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span data-translate="heroTitle">Découvrez la culture</span>
+                        <span class="hero-highlight" data-translate="heroTitleHighlight">guadeloupéenne</span>
+                    </h1>
+                    <p class="hero-description" data-translate="heroDescription">
+                        KaruApp vous fait explorer la richesse culturelle de la Guadeloupe à travers des quiz interactifs et des notifications géolocalisées en temps réel.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#download" class="btn-hero-primary">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            <span data-translate="downloadApp">Télécharger l'app</span>
+                        </a>
+                        <a href="#features" class="btn-hero-secondary" data-translate="learnMore">En savoir plus</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1591454550842-d56fb54f7a52?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080" alt="Plage de Guadeloupe" class="hero-img">
+                    <div class="hero-bg-accent"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-translate="featuresTitle">Une expérience culturelle unique</h2>
+                <p class="section-description" data-translate="featuresDescription">
+                    KaruApp combine apprentissage, découverte et technologie pour vous immerger dans la culture gwada
+                </p>
+            </div>
+            <div class="features-grid" id="features-grid">
+                <!-- Les cartes seront générées dynamiquement par JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1614706580214-1f5412a118a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080" alt="Guadeloupe vue aérienne" class="about-img">
+                </div>
+                <div class="about-content">
+                    <h2 class="about-title" data-translate="whyTitle">Pourquoi KaruApp ?</h2>
+                    <p class="about-description" data-translate="whyDescription">
+                        KaruApp est née de la passion pour la préservation et la promotion de la culture guadeloupéenne. Notre mission est de rendre accessible à tous, habitants et visiteurs, la richesse culturelle de notre île.
+                    </p>
+                    <ul class="about-list">
+                        <li class="about-list-item">
+                            <div class="bullet"></div>
+                            <span data-translate="whyPoint1">Contenu authentique créé par des experts locaux</span>
+                        </li>
+                        <li class="about-list-item">
+                            <div class="bullet"></div>
+                            <span data-translate="whyPoint2">Interface intuitive et expérience utilisateur fluide</span>
+                        </li>
+                        <li class="about-list-item">
+                            <div class="bullet"></div>
+                            <span data-translate="whyPoint3">Mises à jour régulières avec de nouveaux contenus</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="download">
+        <div class="container">
+            <div class="download-content">
+                <h2 class="download-title" data-translate="readyTitle">Prêt à explorer la Guadeloupe ?</h2>
+                <p class="download-description" data-translate="readyDescription">
+                    Téléchargez KaruApp gratuitement et commencez votre voyage culturel dès maintenant
+                </p>
+                <div class="download-buttons">
+                    <button class="store-button">
+                        <svg class="store-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+                        </svg>
+                        <div class="store-text">
+                            <div class="store-label" data-translate="downloadOn">Télécharger sur</div>
+                            <div class="store-name" data-translate="appStore">App Store</div>
+                        </div>
+                    </button>
+                    <button class="store-button">
+                        <svg class="store-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+                        </svg>
+                        <div class="store-text">
+                            <div class="store-label" data-translate="availableOn">Disponible sur</div>
+                            <div class="store-name" data-translate="googlePlay">Google Play</div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="Logo_karu.png" alt="KaruApp Logo" class="footer-logo-img">
+                    </div>
+                    <p class="footer-description" data-translate="footerDescription">
+                        Votre compagnon culturel pour découvrir la Guadeloupe
+                    </p>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading" data-translate="application">Application</h4>
+                    <ul class="footer-links">
+                        <li><a href="#features" data-translate="features">Fonctionnalités</a></li>
+                        <li><a href="#about" data-translate="about">À propos</a></li>
+                        <li><a href="#download" data-translate="download">Télécharger</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading" data-translate="legal">Légal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" data-translate="privacy">Confidentialité</a></li>
+                        <li><a href="#" data-translate="terms">Conditions d'utilisation</a></li>
+                        <li><a href="#" data-translate="mentions">Mentions légales</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading" data-translate="contact">Contact</h4>
+                    <ul class="footer-links">
+                        <li>contact@karuapp.gp</li>
+                        <li>+590 690 XX XX XX</li>
+                        <li>Guadeloupe, FWI</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 KaruApp. <span data-translate="rights">Tous droits réservés.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
